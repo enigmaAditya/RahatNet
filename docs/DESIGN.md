@@ -14,7 +14,7 @@ RahatNet is a disaster-resilient, offline-first digital intranet designed for ze
 * **Government Help Desk, Not a Startup:** The interface communicates stability, authority, and safety. It avoids trendy consumer-tech aesthetics.
 * **Plain Citizen Language:** Always use direct, reassuring vocabulary (e.g., *"Works without internet"*, never *"offline intranet node"* or *"mesh gateway"*).
 * **Depth via Borders:** Depth is communicated through 1px solid high-contrast borders (`border` token).
-* **Strict Shadow Restrictions:** Shadows are permitted **only** on the sticky navigation header (`0 1px 3px 0 rgb(0 0 0 / 0.1)`) and modal dialog backdrops/containers (`0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)`). All cards, buttons, banners, and panels use zero drop-shadows.
+* **Strict Shadow Restrictions:** Shadows are permitted **only** on the sticky navigation header (`0 1px 3px 0 rgb(0 0 0 / 0.1)`), modal dialog backdrops/containers (`0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)`), and toast notifications (`0 4px 6px -1px rgb(0 0 0 / 0.1)`). All cards, buttons, banners, and panels use zero drop-shadows.
 * **Prohibited Visual Treatments:**
   * NO gradients or iridescent fills.
   * NO glow effects or neon highlights.
@@ -34,7 +34,8 @@ RahatNet is a disaster-resilient, offline-first digital intranet designed for ze
 | `background` | `#F8FAFC` | `#020617` | Base canvas | Page canvas background |
 | `surface` | `#FFFFFF` | `#0F172A` | Base surface | Card, modal, and panel background |
 | `surface-muted`| `#F1F5F9` | `#1E293B` | Structural surface | Table headers, chip backgrounds, code blocks |
-| `border` | `#E2E8F0` | `#334155` | 1.2:1 / 3.1:1 | Structural borders (cards, inputs, dividers) |
+| `border` | `#E2E8F0` | `#334155` | 1.23:1 (light) / 1.72:1 (dark) — decorative only | Decorative dividers, card outlines, table borders |
+| `border-strong` | `#64748B` | `#64748B` | ≥ 3:1 against surface (WCAG 1.4.11) | Interactive input boundaries (text inputs, selects, textareas, checkboxes, radio cards, upload zones) |
 | `text` | `#0F172A` | `#F1F5F9` | > 14:1 (WCAG AAA) | Primary headings, body copy, form labels |
 | `text-muted` | `#475569` | `#94A3B8` | > 5.5:1 (WCAG AA) | Secondary meta, timestamps, placeholder text |
 | `primary` | `#1D4ED8` | `#60A5FA` | > 6.0:1 / > 8.0:1 | Primary actions, links, focus indicators |
@@ -139,11 +140,10 @@ Article prose text is strictly constrained to a maximum width of **720px** (~68 
 ## 5. Component Specifications & State Matrix
 
 ### 5.1 App Header
-* **Mobile (390px):**
-  * Top bar (height 56px, background `surface`, border-bottom `border`, subtle shadow `0 1px 3px 0 rgb(0 0 0 / 0.1)`): Left: "RahatNet" wordmark (700 weight, 20px, text `text` with green wifi/signal dot); Right: search icon button (44px target), saved guides icon button (with badge count if > 0), language toggle ("EN / हिंदी"), theme toggle (Sun/Moon).
-  * Sub-bar: Horizontally scrollable row of 4 category chips (Emergency, Health, Agriculture, Education) with icons. Container never scrolls horizontally; only the chip row overflows cleanly with edge fade.
-* **Desktop (1280px):**
-  * Single bar (height 64px, max-width 1120px centered): Left: "RahatNet" wordmark + "Works without internet" badge (`surface-muted`); Center: Category links with active border underline; Right: inline search field (width 240px), language toggle ("EN / हिंदी"), theme toggle (Light / Dark / System), Saved Articles link with bookmark icon.
+* **Mobile (<768px):** Single 56px bar (background `surface`, border-bottom 1px `border`, shadow `0 1px 3px 0 rgb(0 0 0 / 0.1)`). Left: "RahatNet" wordmark (700 weight, 20px, text `text`, no status dot). Right: search icon button, saved icon button (badge count if >0), language button, and theme icon button. All touch targets are 44px with 8px gaps. The language button is ONE button displaying the language you would switch TO ("हिंदी" while viewing in English, "EN" while viewing in Hindi). The theme button is icon-only (Sun/Moon/Monitor) and opens a small Light/Dark/System menu. Must fit cleanly on a 360px viewport with no horizontal page scroll.
+* **Tablet and Small Desktop (768–1279px):** Same top 56px bar, with a 240px search field replacing the search icon button, PLUS a second full-width row containing the 4 section chips (Emergency, Health, Agriculture, Education).
+* **Desktop (≥1280px):** Single 64px bar (max-width 1120px centered): Left: "RahatNet" wordmark; Center: 4 section links with active border underline; Right: 200px search field, language button, theme icon button, and "Saved" link with bookmark icon. NO "Works without internet" badge in the header — that phrase lives strictly in the home hero and the footer.
+* **Section Chip Row on Narrow Screens:** If the 4 section chips do not fit the viewport width, the chip row scrolls inside itself, and the last chip is partly visible at the screen edge as an organic scroll hint. No edge-fade gradient.
 
 ### 5.2 Section Nav
 * Horizontal pill chips with icon + label + guide count.
@@ -154,21 +154,21 @@ Article prose text is strictly constrained to a maximum width of **720px** (~68 
   * *Focus:* Focus ring (2px primary, 2px offset).
 
 ### 5.3 Theme Toggle (Light / Dark / System)
-* Segmented pill control or icon dropdown.
+* Icon button (Sun/Moon/Monitor) opening a small Light/Dark/System menu on mobile/tablet, or a compact segmented pill control on desktop.
 * Shows current selection with solid background `surface` (light mode) or `surface-muted` (dark mode) and 1px `border`. Focus indicator on active state.
 
-### 5.4 Language Toggle (EN / हिंदी)
-* Compact segmented control (44px height).
-* Options: "EN" and "हिंदी". Active language displayed in bold (600) with `surface` background and `primary` text.
-* Must cleanly render Devanagari script (e.g. "हिंदी", "आपातकालीन") without vertical clipping.
+### 5.4 Language Toggle
+* **Mobile & Tablet (<1280px):** A single 44px button displaying the language you switch TO ("हिंदी" when in English, "EN" when in Hindi).
+* **Desktop (≥1280px):** May use either the single switch-to button or a segmented "EN | हिंदी" control if space allows.
+* **Strict Rule:** A language toggle never shows any other Hindi text (such as "आपातकालीन" or "भाषा"); any other Devanagari text belongs strictly to content components.
 
 ### 5.5 Search Field
 * Height: 44px. Left Lucide `Search` icon (20px, `text-muted`). Clear `X` button on right when non-empty.
 * **States:**
-  * *Default:* Background `surface`, border 1px `border`, text `text`, placeholder `text-muted`.
-  * *Hover:* Border 1px `text-muted`.
+  * *Default:* Background `surface`, border 1px `border-strong`, text `text`, placeholder `text-muted`.
+  * *Hover:* Border 1px `text`.
   * *Focus:* Border 1px `primary`, focus ring (2px primary, 2px offset).
-  * *Disabled:* Background `surface-muted`, text `text-muted`, cursor not-allowed.
+  * *Disabled:* Background `surface-muted`, border 1px `border`, text `text-muted`, cursor not-allowed.
 
 ### 5.6 Buttons
 * Minimum height 44px, padding 10px 20px, radius 8px (`radius-control`), font-weight 600, font-size 15px.
@@ -217,16 +217,16 @@ Article prose text is strictly constrained to a maximum width of **720px** (~68 
 
 ### 5.13 Form Fields (Text, Textarea, Select, Radio Group, File Upload)
 * Labels: Font-size 15px, weight 600, text `text`, mandatory asterisk indicator where required.
-* Inputs / Selects / Textareas: Height 44px (min 100px for textareas), radius 8px (`radius-control`), background `surface`, border 1px `border`, padding 10px 14px, font-size 15px.
+* Inputs / Selects / Textareas: Height 44px (min 100px for textareas), radius 8px (`radius-control`), background `surface`, border 1px `border-strong` (ensuring ≥3:1 contrast against surface), padding 10px 14px, font-size 15px.
 * **States:**
-  * *Default:* Border 1px `border`.
-  * *Hover:* Border 1px `text-muted`.
+  * *Default:* Border 1px `border-strong`.
+  * *Hover:* Border 1px `text`.
   * *Focus:* Border 1px `primary`, focus ring (2px primary, 2px offset).
   * *Error:* Border 1px `emergency` (`#B91C1C` / `#F87171`), focus ring in emergency red.
-  * *Disabled:* Background `surface-muted`, cursor not-allowed.
+  * *Disabled:* Background `surface-muted`, border 1px `border`, cursor not-allowed.
 * Inline Error Message: Placed directly below input, font-size 13px, font-weight 600, text `emergency`, with leading Lucide `AlertCircle` (16px).
-* **Radio Group (Card Variant):** Large selectable cards (min height 48px), radius 8px, border 1px `border`. When selected: border 2px `primary`, background `surface-muted` or tint.
-* **File Upload:** Dashed 1px `border`, radius 8px, background `surface-muted`, padding 24px, file chips showing filename + size + remove button.
+* **Radio Group (Card Variant):** Large selectable cards (min height 48px), radius 8px, border 1px `border-strong`. When selected: border 2px `primary`, background `surface-muted` or tint.
+* **File Upload:** Dashed 1px `border-strong`, radius 8px, background `surface-muted`, padding 24px, file chips showing filename + size + remove button.
 
 ### 5.14 Empty State
 * Container: Centered alignment, padding 48px 24px, border 1px dashed `border`, radius 12px, background `surface`.
@@ -259,4 +259,4 @@ Article prose text is strictly constrained to a maximum width of **720px** (~68 
 
 ### 5.20 Footer
 * Container: Border-top 1px `border`, background `surface`, padding 32px 16px, text-align center on mobile / 3-column grid on desktop.
-* Content: "RahatNet — Disaster-Ready Offline Intranet", "Works without internet", server uptime / local storage indicator, Quick section links, Admin/Volunteer staff login link.
+* Content: "RahatNet", "Works without internet", section links, emergency helplines link, "Staff login".
