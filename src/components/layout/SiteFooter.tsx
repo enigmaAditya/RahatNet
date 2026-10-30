@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
-import { WifiOff, ShieldCheck, Heart } from "lucide-react";
+import { WifiOff, Heart } from "lucide-react";
 
 export function SiteFooter() {
   return (

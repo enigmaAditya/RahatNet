@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
-import { Radio, ShieldAlert } from "lucide-react";
+import { ShieldAlert } from "lucide-react";
 
 export function SiteHeader() {
   return (
