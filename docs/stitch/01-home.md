@@ -8,7 +8,7 @@ Primary landing screen for citizens arriving on the local offline Wi-Fi network.
 ### Stitch Prompt: Mobile (390px)
 
 ```text
-Design a 390px mobile screen for the RahatNet homepage. Use the project design system. Layout top to bottom on a #F8FAFC canvas with 1px #E2E8F0 borders and #0F172A text. At the top, show a sticky 56px header with the "RahatNet" logo, search icon, saved guides bookmark button, segmented language toggle ("EN / हिंदी" showing Devanagari "आपातकालीन"), and theme toggle. Directly below the header, display a full-width horizontally scrollable row of four category chips: Emergency (#B91C1C, ShieldAlert), Health (#0F766E, HeartPulse), Agriculture (#15803D, Sprout), and Education (#C2410C, BookOpen). Below the navigation, display an active critical emergency banner with #FEF2F2 background and #B91C1C border stating: "Flood water rising in Ward 4 — move to Government School, Sector 2" (non-dismissible; note that in standard state with zero active alerts, this banner collapses completely). Beneath, render a concise hero banner with heading "Trusted safety information. Works without internet." Next, display the "In an emergency" helpline card with a 2px red border, advisory notice that phone calls require cellular mobile connectivity, and 44px tap-to-call buttons for 112 National Emergency, 108 Ambulance, 101 Fire, and 1078 NDMA Disaster Helpline. Follow with a vertical stack of four section cards showing guide counts (Emergency: 8 guides, Health: 14 guides). Finish with a "Recently updated" list of article cards: "Earthquake Safety and Survival Guide" and "Basic First Aid: Bleeding and Burn Management" with updated dates in en-IN format (14 Oct 2026), followed by the public footer with local Wi-Fi status.
+Design a 390px mobile screen for the RahatNet homepage. Use the project design system. Layout top to bottom on a background canvas with 1px border dividers and text typography. At the top, show a single 56px sticky header with the "RahatNet" wordmark (no status dot) on the left, and on the right: search icon button, saved icon button, language button showing "हिंदी", and theme icon button, all as 44px touch targets with 8px gaps, fitting cleanly at 360px without page scroll. Below the header, display an active critical emergency banner with emergency background and emergency border stating: "Flood water rising in Ward 4 — move to Government School, Sector 2" (non-dismissible). Beneath, render a concise hero section with heading "Trusted safety information. Works without internet.", explanatory reassurance copy, and a primary action button labeled "Request help". Next, display the "In an emergency" helpline card with a 2px emergency border, advisory notice that voice calls require cellular mobile network connectivity, and 44px tap-to-call buttons for 112 National Emergency, 108 Ambulance, 101 Fire, and 1078 NDMA Disaster Helpline. Follow with a vertical stack of four section cards showing 3 guides each: Emergency with Hindi subtitle "आपातकालीन सुरक्षा" (ShieldAlert, emergency token), Health (HeartPulse, health token), Agriculture (Sprout, agriculture token), and Education (BookOpen, education token). Finish with a "Recently updated" list of article cards: "Earthquake Safety and Survival Guide" and "Basic First Aid: Bleeding and Burn Management" with en-IN dates (14 Oct 2026), followed by the public footer.
 ```
 
 ---
@@ -16,7 +16,7 @@ Design a 390px mobile screen for the RahatNet homepage. Use the project design s
 ### Stitch Prompt: Tablet (768px)
 
 ```text
-Design a 768px tablet screen for the RahatNet homepage. Use the project design system. Layout top to bottom on a #F8FAFC background with #0F172A text and 1px #E2E8F0 borders. At the top, render a 60px sticky header featuring the "RahatNet" wordmark, "Works without internet" pill badge, search button, language switch ("EN / हिंदी" with Hindi script "आपातकालीन सुरक्षा"), saved articles link, and theme toggle. Directly below, show a top critical alert banner with red #FEF2F2 background, #B91C1C border, and AlertTriangle icon stating: "Flood water rising in Ward 4 — move to Government School, Sector 2". Note that when no alerts are active, this banner collapses completely. Underneath, present the hero block with H1 "Trusted safety information. Works without internet." and an action button "Request Emergency Help". Below the hero, place the "In an emergency" helpline card with red accent border, cellular call advisory, and large touch buttons for 112, 108, 101, and 1078. Next, render a 2x2 grid of section cards: Emergency (ShieldAlert, 8 guides), Health (HeartPulse, 14 guides), Agriculture (Sprout, 11 guides), and Education (BookOpen, 6 guides). Below the grid, show a 2-column layout of "Recently updated" article cards including "Flood Safety and Evacuation Protocols" and "Safe Drinking Water During Disasters" (both updated 14 Oct 2026), ending with the citizen footer.
+Design a 768px tablet screen for the RahatNet homepage. Use the project design system. Layout top to bottom on a background canvas with text typography and 1px border dividers. At the top, render a 56px sticky header featuring the "RahatNet" wordmark (no status dot), a 240px search field bounded by border-strong, a language button showing "हिंदी", a theme icon button, and a saved icon button. Directly below the top bar, display a second full-width row containing four section chips: Emergency, Health, Agriculture, and Education. Below navigation, show an active critical alert banner with emergency token background and emergency border stating: "Flood water rising in Ward 4 — move to Government School, Sector 2". Underneath, present the hero block with Display heading "Trusted safety information. Works without internet.", reassuring body text, and a primary action button labeled "Request help". Below the hero, place the "In an emergency" helpline card with a 2px emergency border, cellular call advisory, and large touch buttons for 112, 108, 101, and 1078. Next, render a 2x2 grid of section cards showing 3 guides each: Emergency with Hindi subtitle "आपातकालीन सुरक्षा" (ShieldAlert), Health (HeartPulse), Agriculture (Sprout), and Education (BookOpen). Below the grid, show a 2-column layout of recently updated article cards including "Flood Safety and Evacuation Protocols" and "Safe Drinking Water During Disasters" (both updated 14 Oct 2026), ending with the public footer.
 ```
 
 ---
@@ -24,25 +24,35 @@ Design a 768px tablet screen for the RahatNet homepage. Use the project design s
 ### Stitch Prompt: Desktop (1280px)
 
 ```text
-Design a 1280px desktop screen for the RahatNet homepage. Use the project design system. Layout top to bottom within a 1120px max-width container on a #F8FAFC canvas with #0F172A text and 1px #E2E8F0 borders. Sticky 64px header features the "RahatNet" wordmark, "Works without internet" badge, section navigation links (Emergency, Health, Agriculture, Education), 240px search bar, segmented "EN / हिंदी" language toggle showing "आपातकालीन", theme switcher, and "Saved Guides" link. At the top of the main content, display an active critical alert banner in red #FEF2F2 with #B91C1C border reading: "Flood water rising in Ward 4 — move to Government School, Sector 2" (note the no-alert state where this collapses). Below, show a wide hero section with Display title "Trusted safety information. Works without internet.", reassurance body copy, and a primary button "Request Emergency Help". Next, render an "In an emergency" helpline panel with 2px #B91C1C border, cellular network disclaimer, and a 4-column grid of helpline buttons for 112, 108, 101, and 1078. Below, place a 4-column section card grid for Emergency, Health, Agriculture, and Education with icon badges and guide counts. Follow with a "Recently Updated Guides" 3-column card grid showing "Earthquake Safety and Survival Guide", "Flood Safety and Evacuation Protocols", and "Safe Drinking Water During Disasters" with en-IN dates (14 Oct 2026), and finish with the 3-column footer.
+Design a 1280px desktop screen for the RahatNet homepage. Use the project design system. Layout top to bottom within a 1120px max-width container on a background canvas with text typography and 1px border dividers. Sticky 64px header features the "RahatNet" wordmark on the left, four section links (Emergency, Health, Agriculture, Education) with active underline in the center, and on the right: a 200px search field bounded by border-strong, a single language button showing "हिंदी", a theme icon button, and a "Saved" link with bookmark icon (no "Works without internet" badge in the header). At the top of the main content, display an active critical alert banner with emergency background and emergency border reading: "Flood water rising in Ward 4 — move to Government School, Sector 2". Below, show a wide hero section with Display title "Trusted safety information. Works without internet.", reassurance body copy, and a primary action button labeled "Request help". Next, render an "In an emergency" helpline panel with 2px emergency border, cellular network disclaimer, and a 4-column grid of helpline buttons for 112, 108, 101, and 1078. Below, place a 4-column section card grid showing 3 guides each: Emergency with Hindi subtitle "आपातकालीन सुरक्षा", Health, Agriculture, and Education with icon badges. Follow with a "Recently Updated Guides" 3-column card grid showing "Earthquake Safety and Survival Guide", "Flood Safety and Evacuation Protocols", and "Safe Drinking Water During Disasters" with en-IN dates (14 Oct 2026), and finish with the 3-column footer.
+```
+
+---
+
+### State Edits: No Active Alert
+Apply this edit instruction to a duplicate of the generated home screen to display the calm state when no emergency broadcast is in effect:
+
+```text
+Modify the generated home screen to show the no-alert state: remove the top critical emergency alert banner completely so that the hero section sits directly below the header with standard spacing, with all other sections unchanged.
 ```
 
 ---
 
 ### Dark Mode Check
 When switching this screen to dark mode in the Stitch theme editor, verify:
-* Canvas background shifts to `#020617` and card surfaces shift to `#0F172A`.
-* Critical alert banner shifts to `#450A0A` background with `#FCA5A5` text and `#991B1B` border.
-* The helpline card maintains high visibility with `#F87171` border and `#0F172A` surface.
+* Canvas background shifts to `background` and card surfaces shift to `surface`.
+* Critical alert banner shifts to emergency background with high-contrast text and emergency border.
+* The helpline card maintains high visibility with emergency border and `surface` background.
 * Section cards show their dark accent icons and borders without bright halos or glows.
-* Hero title and article titles switch to `#F1F5F9` with at least 14:1 contrast ratio.
-* Devanagari script in the language toggle renders cleanly without text clipping.
+* Hero title and article titles switch to `text` with at least 14:1 contrast ratio.
+* Devanagari script "आपातकालीन सुरक्षा" renders cleanly without clipping.
 
 ---
 
 ### Must Not
-* The mobile page must NEVER scroll sideways; only the top category chip row may overflow horizontally.
+* The mobile page must NEVER scroll sideways; header controls and content fit within 360px viewport.
 * Must not display technical jargon such as "Intranet Access Point", "SSID", or "IP Gateway".
-* Must not use red color for non-emergency sections or general call-to-action buttons.
+* Must not use emergency red for non-emergency sections or general call-to-action buttons.
 * Must not show stock photography or cartoon illustrations of disaster victims.
 * Must not add drop shadows to section cards or article cards.
+* Must not include "Works without internet" badge in the header bar.

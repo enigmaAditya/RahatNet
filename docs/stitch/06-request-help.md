@@ -8,7 +8,7 @@ Emergency intake interface for citizens facing distress during a disaster. Enabl
 ### Stitch Prompt: Mobile (390px)
 
 ```text
-Design a 390px mobile screen for the RahatNet emergency help request form. Use the project design system. Layout top to bottom on a #F8FAFC canvas with 1px #E2E8F0 borders and #0F172A text. At the top, show the sticky 56px header with "RahatNet" logo, search icon, saved button, language toggle ("EN / हिंदी" showing "आपातकालीन"), and theme toggle. Below header, show breadcrumb "Home / Request Help" and H1 "Request Emergency Help". Prominently display a reassurance privacy callout (#EFF6FF background, #1E40AF text, border 1px #BFDBFE): "Only volunteers can see your request. Your phone number is never shown publicly." Render form fields: 1) Full Name input filled with "Aarav Sharma", 2) Area / Location input showing an inline validation error with red border #B91C1C and error message "Please provide your landmark or ward location", 3) Type of Help selectable as large 2x3 radio cards: Medical (selected, 2px blue border), Food & water, Shelter, Rescue, Missing person, Other, 4) Number of People input ("4"), 5) Details textarea ("Elderly family member requires insulin and clean drinking water near Ward 4"), and 6) Optional Phone input ("9876543210"). Below, provide an Emergency primary submit button "Send Help Request". Underneath, show a success confirmation card state for reference: green #DCFCE7 card with checkmark, reference code "Request #RH-4092", and advice "Volunteers at Sector 2 relief desk have received this", followed by the mobile footer.
+Design a 390px mobile screen for the RahatNet emergency help request form. Use the project design system. Layout top to bottom on a background canvas with 1px border dividers and text typography. At the top, show the single 56px sticky header with "RahatNet" wordmark (no status dot) on the left, and on the right: search icon button, saved icon button, language button showing "हिंदी", and theme icon button, all as 44px touch targets with 8px gaps, fitting cleanly at 360px without page scroll. Below header, show breadcrumb "Home / Request Help" and H1 "Request Emergency Help". Prominently display a reassurance privacy callout with primary tint background and border: "Only volunteers can see your request. Your phone number is never shown publicly." Render form fields: 1) Full Name input bounded by border-strong filled with "Aarav Sharma", 2) Area / Location input bounded by border-strong showing an inline validation error with emergency token border and error text "Please provide your landmark or ward location", 3) Type of Help selectable as large 2x3 radio cards bounded by border-strong: Medical (selected with 2px primary border), Food & water, Shelter, Rescue, Missing person, Other, 4) Number of People input bounded by border-strong ("4"), 5) Details textarea bounded by border-strong ("Elderly family member requires insulin and clean drinking water near Ward 4"), and 6) Optional Phone input bounded by border-strong ("9876543210"). Below, provide an Emergency primary submit button "Send Help Request", followed by the mobile footer.
 ```
 
 ---
@@ -16,18 +16,27 @@ Design a 390px mobile screen for the RahatNet emergency help request form. Use t
 ### Stitch Prompt: Desktop (1280px)
 
 ```text
-Design a 1280px desktop screen for the RahatNet emergency help request page. Use the project design system. Layout top to bottom within a 720px centered form container on a #F8FAFC canvas with #0F172A text and 1px #E2E8F0 borders. At the top, show the sticky 64px header with "RahatNet" logo, "Works without internet" badge, section links, search bar, language toggle ("EN / हिंदी" showing "आपातकालीन"), and theme toggle. Below, render breadcrumb "Home / Request Help" and page title H1 "Request Emergency Assistance". Display an info privacy banner stating: "Only verified relief volunteers can see your request. Your phone number is never shown publicly." Render form elements: 1) Full Name text field, 2) Area / Location input displaying an inline validation error in red (#B91C1C border, AlertCircle icon, "Location or landmark is required for dispatch"), 3) Type of Help displayed as a 6-option grid of large radio cards: Medical, Food & water, Shelter, Rescue, Missing person, Other (with Medical selected), 4) Number of People field, 5) Details textarea with character count, 6) Optional Phone Number input. Include a prominent primary button "Submit Help Request" (height 48px). Beside or below the form, illustrate the success confirmation dialog state displaying reference number "Request #RH-4092" and notice "Volunteer dispatch notified at Government School, Sector 2", followed by the 3-column footer.
+Design a 1280px desktop screen for the RahatNet emergency help request page. Use the project design system. Layout top to bottom within a 720px centered form container on a background canvas with text typography and 1px border dividers. At the top, show the sticky 64px header with "RahatNet" wordmark, four category links, a 200px search field bounded by border-strong, a single language button showing "हिंदी", a theme icon button, and a "Saved" link with bookmark icon (no "Works without internet" badge in the header). Below, render breadcrumb "Home / Request Help" and page title H1 "Request Emergency Assistance". Display an info privacy banner stating: "Only verified relief volunteers can see your request. Your phone number is never shown publicly." Render form elements: 1) Full Name text field bounded by border-strong, 2) Area / Location input displaying an inline validation error with emergency token border, AlertCircle icon, and error message "Location or landmark is required for dispatch", 3) Type of Help displayed as a 6-option grid of large radio cards bounded by border-strong: Medical (selected with 2px primary border), Food & water, Shelter, Rescue, Missing person, Other, 4) Number of People field, 5) Details textarea with character count bounded by border-strong, 6) Optional Phone Number input. Include a prominent primary button "Submit Help Request" (height 48px), followed by the 3-column footer.
+```
+
+---
+
+### State Edits: Success Confirmation
+Apply this edit instruction to a duplicate of the generated help request screen to show the submitted state:
+
+```text
+Modify the generated help request screen to display the success confirmation state: replace the form card with a centered confirmation card featuring a green agriculture token border, a CheckCircle icon, H2 heading "Request Submitted", reference code badge "Reference: RH-4092", honest confirmation message "Your request has been saved. Volunteers at this help point will see it. Reference: RH-4092. If someone's life is in danger, call 112 if you have mobile signal.", and a primary button "Return to Homepage".
 ```
 
 ---
 
 ### Dark Mode Check
 When switching this screen to dark mode in the Stitch theme editor, verify:
-* Canvas switches to `#020617` and inputs use `#0F172A` background with `#334155` border.
-* Privacy reassurance callout shifts to `#172554` background with `#93C5FD` text and `#1E40AF` border.
-* Inline validation error border uses `#F87171` with `#FCA5A5` error text and icon.
-* Selected help-type radio card displays `#1E293B` background with 2px `#60A5FA` border.
-* Success confirmation card uses `#052E16` background, `#4ADE80` text, and `#15803D` border.
+* Canvas switches to `background` and inputs use `surface` background with `border-strong` border.
+* Privacy reassurance callout shifts to dark primary tint with high contrast text.
+* Inline validation error border uses `emergency` with high-contrast error text and icon.
+* Selected help-type radio card displays `surface-muted` background with 2px `primary` border.
+* Interactive form boundaries maintain `border-strong` for clear tactile visibility.
 
 ---
 
@@ -36,3 +45,5 @@ When switching this screen to dark mode in the Stitch theme editor, verify:
 * Must not display submitted help requests publicly or expose citizen personal data.
 * Must not use small, difficult-to-tap radio circles; help categories must be large, high-contrast cards.
 * Must not use purple or violet anywhere in borders or button states.
+* Must not make unrealistic promises like "Volunteer dispatch notified immediately" in success copy.
+* Must not use raw hex codes in prompts.
