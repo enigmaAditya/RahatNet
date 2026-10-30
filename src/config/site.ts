@@ -114,9 +114,6 @@ export const siteConfig = {
 
 export type CategoryId = (typeof siteConfig.categories)[number]["id"];
 
-export const categoryIds: [CategoryId, ...CategoryId[]] = [
-  "emergency",
-  "health",
-  "agriculture",
-  "education",
-];
+export const categoryIds = siteConfig.categories.map(
+  (cat) => cat.id
+) as [CategoryId, ...CategoryId[]];

@@ -1,13 +1,17 @@
 import React from "react";
 import Link from "next/link";
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface BaseButtonProps {
   href?: string;
   variant?: "primary" | "secondary" | "emergency" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
+  className?: string;
   children: React.ReactNode;
 }
+
+export type ButtonProps = BaseButtonProps &
+  Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof BaseButtonProps> &
+  Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof BaseButtonProps>;
 
 export function Button({
   href,
@@ -43,7 +47,7 @@ export function Button({
 
   if (href) {
     return (
-      <Link href={href} className={combinedClasses} role="button">
+      <Link href={href} className={combinedClasses} {...props}>
         {children}
       </Link>
     );

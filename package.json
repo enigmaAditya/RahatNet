@@ -7,7 +7,7 @@
     "build": "next build && node scripts/prepare-standalone.mjs",
     "start": "node .next/standalone/server.js",
     "lint": "eslint",
-    "zip": "zip -r RahatNet.zip . -x 'node_modules/*' '.next/*' '*.zip'"
+    "zip": "zip -r RahatNet.zip . -x 'node_modules/*' '.next/*' '*.zip' '.git/*' 'RahatNet/*'"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",

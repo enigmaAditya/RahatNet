@@ -128,7 +128,7 @@ export default async function ArticlePage({
           </p>
 
           {/* Meta Details Box */}
-          <div className="mt-6 flex flex-wrap items-center gap-4 sm:gap-6 rounded-xl bg-slate-50 p-4 text-xs sm:text-sm text-slate-600 dark:bg-slate-800/60 dark:text-slate-300 border border-slate-150 dark:border-slate-800">
+          <div className="mt-6 flex flex-wrap items-center gap-4 sm:gap-6 rounded-xl bg-slate-50 p-4 text-xs sm:text-sm text-slate-600 dark:bg-slate-800/60 dark:text-slate-300 border border-slate-200 dark:border-slate-800">
             <div className="flex items-center gap-1.5">
               <Calendar className="h-4 w-4 text-slate-500" aria-hidden="true" />
               <span>
