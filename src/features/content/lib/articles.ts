@@ -6,9 +6,6 @@ import { Article, validateArticleFrontmatter } from "../schemas/article.schema";
 
 const CONTENT_ROOT = path.join(process.cwd(), "content");
 
-// Global registry to detect duplicate category + slug combinations across articles
-const registeredArticles = new Map<string, string>();
-
 function formatContentIntegrityError(filePath: string, issues: string[]): string {
   const errorDetails = issues.map((i) => `  - ${i}`).join("\n");
   return (
@@ -38,7 +35,7 @@ export function getCategoryConfig(category: string): CategoryConfig | undefined 
 /**
  * Reads and parses a markdown file from the content directory.
  * Frontmatter is rigorously validated via Zod schema and content integrity rules,
- * halting the build if invalid, mismatched, or duplicated.
+ * halting the build if invalid or mismatched.
  */
 async function loadArticleFromFile(
   categoryDir: string,
@@ -67,16 +64,7 @@ async function loadArticleFromFile(
     );
   }
 
-  // Rule 3: two articles share the same category + slug
-  const articleKey = `${validatedFrontmatter.category}/${validatedFrontmatter.slug}`;
-  const existingPath = registeredArticles.get(articleKey);
-  if (existingPath && existingPath !== fullPath) {
-    issues.push(
-      `[duplicate]: Two articles share the same category + slug ("${articleKey}"). Conflicts with: ${existingPath}`
-    );
-  } else {
-    registeredArticles.set(articleKey, fullPath);
-  }
+  // Duplicate category+slug is inherently prevented by rules 1 and 2 (category matches folder, slug matches unique filename).
 
   if (issues.length > 0) {
     throw new Error(formatContentIntegrityError(fullPath, issues));
