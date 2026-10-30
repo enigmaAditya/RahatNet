@@ -26,7 +26,7 @@ Uncontrolled bleeding is a leading cause of preventable trauma deaths. Acting pr
 ### Step 1: Direct Firm Pressure
 - Place a clean cloth, sterile gauze, or clothing pad directly over the bleeding wound.
 - Apply firm, continuous downward pressure using your palm or both hands.
-- Maintain constant pressure for at least 5 to 10 minutes without lifting the dressing to look.
+- Maintain constant pressure for at least 10 minutes without lifting the dressing to look.
 
 ### Step 2: Elevation
 - If there are no broken bones suspected in the injured limb, elevate the bleeding extremity above heart level while continuing firm pressure.

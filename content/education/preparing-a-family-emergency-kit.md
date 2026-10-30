@@ -24,7 +24,7 @@ During major cyclones, flash floods, earthquakes, or industrial chemical leaks, 
 Keep supplies packed in a sturdy, water-resistant backpack placed in an easily accessible location near your main exit.
 
 ### 1. Water and Nutrition
-- **Drinking Water:** Pack clean water in tightly sealed, unbreakable bottles (aim for at least 2 to 3 litres per person).
+- **Drinking Water:** Plan for about 3–4 litres of drinking water per person per day. Carry what you can in sealed bottles and know where you can refill safely.
 - **Non-Perishable Food:** High-energy foods that require no cooking or refrigeration: roasted grams (chana), flattened rice (poha), dates, jaggery, biscuits, and energy bars.
 - Compact manual can opener and lightweight utensils.
 

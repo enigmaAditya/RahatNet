@@ -25,11 +25,13 @@ It is critical to distinguish mild heat exhaustion from a medical emergency:
 
 | Sign | Heat Exhaustion | Heat Stroke (Medical Emergency) |
 | :--- | :--- | :--- |
-| **Skin Condition** | Heavy sweating, pale or clammy | Hot, red, dry skin (sweating has stopped) |
+| **Skin Condition** | Heavy sweating, pale or clammy | Hot skin — may be dry OR still sweating |
 | **Body Temperature** | Normal or slightly elevated | Dangerously high (often above 40°C / 104°F) |
 | **Mental State** | Tired, weak, dizziness, headache | Confusion, slurred speech, delirium, coma |
 | **Pulse** | Fast and weak | Rapid and pounding |
 | **Nausea** | Mild nausea or muscle cramps | Severe vomiting or seizures |
+
+Confusion, slurred speech or collapse in the heat is the key danger sign. Treat it as heat stroke even if the person is sweating.
 
 ---
 

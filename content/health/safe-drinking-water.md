@@ -31,10 +31,10 @@ Boiling is the single most effective method to eliminate bacteria, viruses, and 
 
 ## 2. Chlorine Purification Tablets
 
-When fuel or wood for boiling is unavailable, chlorine tablets (Halazone or Sodium Dichloroisocyanurate) are widely distributed by relief missions.
+When fuel or wood for boiling is unavailable, chlorine tablets (often NaDCC) are widely distributed by relief missions.
 
 - Ensure water is strained clear of heavy mud before adding chemical tablets.
-- Add the tablet according to the specific manufacturer or relief packet dosage (typically one tablet per 4 to 5 litres of water).
+- Add the tablet according to the specific manufacturer or relief packet dosage: follow the dosage on the packet.
 - Stir thoroughly and let the treated water stand covered for **at least 30 minutes** before drinking. This contact time is critical to neutralize pathogens.
 
 ---

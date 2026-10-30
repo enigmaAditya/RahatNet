@@ -22,7 +22,7 @@ In crisis encampments and disaster zones, diarrhoeal illnesses spread quickly du
 ## Recognising Dehydration Early
 
 Be alert for these early and moderate signs of body fluid depletion:
-- **In Children & Infants:** Dry mouth and tongue, crying without tears, sunken eyes, no wet nappies for over 3 hours, and unusual lethargy or irritability.
+- **In Children & Infants:** Dry mouth and tongue, crying without tears, sunken eyes, far fewer wet nappies than usual, and unusual lethargy or irritability.
 - **In Adults:** Extreme thirst, lightheadedness or dizziness upon standing, dark-coloured urine, and sudden weakness.
 
 ---

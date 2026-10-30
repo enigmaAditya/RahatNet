@@ -31,7 +31,7 @@ Floods are among the most frequent natural disasters. Flash floods can develop r
 ## The Rule of Floodwaters: Turn Around, Don't Drown
 
 1. **Never Walk Through Moving Water:** Just six inches (15 cm) of fast-flowing water can sweep an adult off their feet. If you must walk in standing water, use a sturdy stick or pole to probe the ground ahead for drop-offs or open drains.
-2. **Never Drive Into Flooded Roads:** Most flood-related fatalities occur in submerged vehicles. A foot of flowing water can float many passenger cars, and two feet can carry away SUVs and pickup trucks.
+2. **Never Drive Into Flooded Roads:** Many flood deaths happen when people try to drive through water.
 3. **Avoid Submerged Bridges and Culverts:** Floodwaters frequently scour the foundational supports of rural bridges without visible surface damage.
 
 ---
