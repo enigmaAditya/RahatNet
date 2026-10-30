@@ -6,6 +6,20 @@ import { Article, validateArticleFrontmatter } from "../schemas/article.schema";
 
 const CONTENT_ROOT = path.join(process.cwd(), "content");
 
+// Global registry to detect duplicate category + slug combinations across articles
+const registeredArticles = new Map<string, string>();
+
+function formatContentIntegrityError(filePath: string, issues: string[]): string {
+  const errorDetails = issues.map((i) => `  - ${i}`).join("\n");
+  return (
+    `\n========================================================\n` +
+    `❌ CONTENT INTEGRITY ERROR IN CONTENT FILE:\n` +
+    `File: ${filePath}\n\n` +
+    `Issues:\n${errorDetails}\n` +
+    `========================================================\n`
+  );
+}
+
 /**
  * Returns all configured site categories.
  * Read layer abstraction that will connect to Prisma in Phase 2.
@@ -23,7 +37,8 @@ export function getCategoryConfig(category: string): CategoryConfig | undefined 
 
 /**
  * Reads and parses a markdown file from the content directory.
- * Frontmatter is rigorously validated via Zod schema, halting the build if invalid.
+ * Frontmatter is rigorously validated via Zod schema and content integrity rules,
+ * halting the build if invalid, mismatched, or duplicated.
  */
 async function loadArticleFromFile(
   categoryDir: string,
@@ -34,6 +49,38 @@ async function loadArticleFromFile(
 
   const parsed = matter(rawSource);
   const validatedFrontmatter = validateArticleFrontmatter(parsed.data, fullPath);
+
+  const issues: string[] = [];
+
+  // Rule 1: frontmatter category !== the folder name the file is in
+  if (validatedFrontmatter.category !== categoryDir) {
+    issues.push(
+      `[category]: Article frontmatter category "${validatedFrontmatter.category}" does not match parent folder name "${categoryDir}"`
+    );
+  }
+
+  // Rule 2: frontmatter slug !== the file name without ".md"
+  const expectedSlug = path.parse(fileName).name;
+  if (validatedFrontmatter.slug !== expectedSlug) {
+    issues.push(
+      `[slug]: Article frontmatter slug "${validatedFrontmatter.slug}" does not match file name "${expectedSlug}"`
+    );
+  }
+
+  // Rule 3: two articles share the same category + slug
+  const articleKey = `${validatedFrontmatter.category}/${validatedFrontmatter.slug}`;
+  const existingPath = registeredArticles.get(articleKey);
+  if (existingPath && existingPath !== fullPath) {
+    issues.push(
+      `[duplicate]: Two articles share the same category + slug ("${articleKey}"). Conflicts with: ${existingPath}`
+    );
+  } else {
+    registeredArticles.set(articleKey, fullPath);
+  }
+
+  if (issues.length > 0) {
+    throw new Error(formatContentIntegrityError(fullPath, issues));
+  }
 
   return {
     ...validatedFrontmatter,
