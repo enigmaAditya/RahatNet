@@ -41,14 +41,25 @@ pnpm install
 # Start the development server
 pnpm dev
 
-# Or build and start the standalone production server
+# Or build standalone bundle and start production server
 pnpm build
 pnpm start
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) on your device.
+### LAN / Wi-Fi Access for Stranded Citizens
+To allow mobile phones and client devices connected to the machine's local Wi-Fi / hotspot to access RahatNet, start the standalone production server bound to all network interfaces:
 
-> **Offline Demonstration Mode**: You can disconnect your development machine from the Internet (disable Wi-Fi / unplug Ethernet) and run `pnpm start`. All fonts, icons, layouts, and articles render completely with zero failed network requests.
+```bash
+HOSTNAME=0.0.0.0 PORT=3000 pnpm start
+```
+
+Then on any phone or tablet connected to the same Wi-Fi, open:
+```text
+http://<laptop-ip>:3000
+```
+*(e.g., `http://10.35.23.211:3000`)*
+
+> **Offline Demonstration Mode**: You can disconnect your development machine completely from the Internet (turn off WAN Wi-Fi / unplug Ethernet) and run `pnpm start`. All fonts, icons, layouts, and articles render completely with zero external requests.
 
 ---
 
