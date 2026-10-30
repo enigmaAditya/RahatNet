@@ -100,4 +100,4 @@ Export the generated screens and code specifications for integration into Next.j
 | `15-help-requests.md`| Citizen Triage Desk | Volunteers | Desktop (1280px) | [ ] | [ ] |
 | `16-users.md` | Staff Account Roster | Administrators | Desktop (1280px) | [ ] | [ ] |
 
-**Total Screen Prompts:** 25 Prompts across 15 screen definitions + 1 component system sheet.
+**Total Screen Prompts:** 26 Prompts across 15 screen definitions + 1 component system sheet.
