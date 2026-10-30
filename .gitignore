@@ -25,6 +25,7 @@
 *.pem
 *.docx
 *.pdf
+*.zip
 
 # debug
 npm-debug.log*
