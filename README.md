@@ -144,8 +144,8 @@ Academic evaluation mapping for **INT252 (ReactJS)** and **INT257 (Next.js)** ba
 | **Static Site Generation (SSG) & Content Layer Abstraction** | [`[category]/page.tsx`](src/app/(public)/[category]/page.tsx), [`[slug]/page.tsx`](src/app/(public)/[category]/[slug]/page.tsx), [`articles.ts`](src/features/content/lib/articles.ts) | **Unit II**: Conditional & static component rendering | **Unit II**: Rendering strategies (SSG via `generateStaticParams`, `dynamicParams = false`) |
 | **Route Groups & Dynamic Nested Layouts** | [`(public)/layout.tsx`](src/app/(public)/layout.tsx), [`[category]/layout.tsx`](src/app/(public)/[category]/layout.tsx) | **Unit II**: Component design (composition, view slots) | **Unit I**: Routing (file-based, dynamic, nested layouts, route groups `(public)`) |
 | **Fallback States (Loading & Friendly 404 Handlers)** | [`loading.tsx`](src/app/loading.tsx), [`not-found.tsx`](src/app/not-found.tsx) | **Unit II**: Conditional rendering & fallback presentation | **Unit I**: App Router special files (`loading.tsx`, `not-found.tsx`) |
-| **Metadata API & Prerendered Head Management** | [`layout.tsx`](src/app/layout.tsx), `generateMetadata` in category & article pages | **Unit II**: Declarative document metadata | **Unit V**: Performance & SEO (Metadata API & root template) |
-| **Zero-Internet Local Asset Bundling & Standalone Deployment** | [`next.config.ts`](next.config.ts), [`scripts/prepare-standalone.mjs`](scripts/prepare-standalone.mjs) | **Unit II**: Offline asset management & local styling | **Unit V**: Deployment (standalone production build & execution) |
+| **Metadata API & Prerendered Head Management** | [`layout.tsx`](src/app/layout.tsx), `generateMetadata` in category & article pages | — | **Unit V**: Performance & SEO (Metadata API & root template) |
+| **Zero-Internet Local Asset Bundling & Standalone Deployment** | [`next.config.ts`](next.config.ts), [`scripts/prepare-standalone.mjs`](scripts/prepare-standalone.mjs) | — | **Unit V**: Deployment (standalone production build & execution) |
 
 ---
 
